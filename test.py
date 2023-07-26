@@ -3,7 +3,7 @@ from google.oauth2 import service_account
 
 # TODO(developer): Set key_path to the path to the service account key
 #                  file.
-key_path = "/path/al/key.json"
+key_path = "./key.json"
 
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
