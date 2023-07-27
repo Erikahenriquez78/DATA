@@ -3,8 +3,8 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.35048046635821,40.4877322398648,Centro de Salud Juan de Austria,Avenida,Juan de Austria,19,Alcalá de Henares
 -3.39302921690241,40.4816404225152,Centro de Salud La Garena,Calle,Arturo Soria,10,Alcalá de Henares
 -3.36812222089192,40.4750557559686,Centro de Salud Luis Vives I y II,Calle,Luis Vives,16,Alcalá de Henares
--3.35735361345621,40.4821616379152,Centro de Salud Manuel Merino,Calle,Manuel Merino,1,Alcal  de Henares
--3.3577099490685,40.4892776586669,Centro de Salud Marua de Guzm,Calle,Juan de Borgoua,1,Alcal  de Henares
+-3.35735361345621,40.4821616379152,Centro de Salud Manuel Merino,Calle,Manuel Merino,1,Alcalá de Henares
+-3.3577099490685,40.4892776586669,Centro de Salud Marua de Guzm,Calle,Juan de Borgoua,1,Alcalá de Henares
 -3.37123145092761,40.5105052487922,Centro de Salud Miguel de Cervantes,Avda.,Gustavo Adolfo Becquer,23,Alcalá de Henares
 -3.37566243331453,40.4711395928179,Centro de Salud Nuestra Sra. del Pilar,Calle,Ntra. Sra. del Pilar,42,Alcalá de Henares
 -3.37959850160293,40.4788114356574,Centro de Salud Puerta de Madrid,Avenida,del Ejarcito,61,Alcalá de Henares
@@ -13,7 +13,7 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.64011866043418,40.5408327390341,Centro de Salud La Chopera,Paseo,Chopera,48,Alcobendas
 -3.64592941156556,40.5446111498363,Centro de Salud Marquos de la Valdavia,Paseo,Chopera,100,Alcobendas
 -3.6372202234792,40.5477495515971,Centro de Salud Miraflores,Avenida,de Espa,50,Alcobendas
--3.65082793200751,40.5504664432566,Centro de Salud Valdelasfuentes,Calle,Dolores IbSrruri,4,Alcobendas
+-3.65082793200751,40.5504664432566,Centro de Salud Valdelasfuentes,Calle,Dolores Ibárruri,4,Alcobendas
 -3.81122296116136,40.3453715914223,Centro de Salud Dr. Pedro Latn Entralgo,Avenida,Libertad,2,Alcorcón
 -3.82907214380377,40.3481819915989,Centro de Salud Doctor Trueta,Plaza,de las Fraguas,8,Alcorcón
 -3.82084182012241,40.3423847731505,Centro de Salud Gregorio Mara,Calle,Escolares,1,Alcorcón
@@ -28,7 +28,7 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.43262969212876,40.2964599635351,Centro de Salud Arganda del Rey,Camino,del Molino,0,Arganda del Rey
 -3.8833296470976,40.4039967497382,Centro de Salud Condes de Barcelona,Calle,Ronda,10,Boadilla del Monte
 -3.63579365369046,40.9930393513529,Centro de Salud Buitrago de Lozoya,Paseo,del R,10,Buitrago de Lozoya
--4.43710409513174,40.3002076546066,Centro de Salud Cadalso de los Vidrios,Calle,Doctor MenSndez,5,Cadalso de los Vidrios
+-4.43710409513174,40.3002076546066,Centro de Salud Cadalso de los Vidrios,Calle, Doctor Menendez,5,Cadalso de los Vidrios
 -3.38077325512384,40.3378056266771,Centro de Salud Campo Real,Calle,de las Escuelas,1,Campo Real
 -4.05087793352953,40.7411862639279,Centro de Salud Cercedilla,Avenida,de los Toreros,7,Cercedilla
 -3.61576653652309,40.1586158462846,Centro de Salud Ciempozuelos,Calle,Padre Benito Menni,0,Ciempozuelos
@@ -41,8 +41,8 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.54142928246785,40.4199322273815,Centro de Salud Ciudad San Pablo,Avenida,Madrid,11,Coslada
 -3.56325018914795,40.4286658795015,Centro de Salud Doctor Tamames,Calle,Alameda,1,Coslada
 -3.56751033016849,40.4193566949919,Centro de Salud El Puerto,Calle,Ocelno PacSfico,3,Coslada
--3.552032892673,40.4207379472685,Centro de Salud Jaime Vera,Avenida,Espaia,0,Coslada
--3.54256666833606,40.4250530609021,Centro de Salud Valleaguado,Avenida,Principes de Espaaa,30,Coslada
+-3.552032892673,40.4207379472685,Centro de Salud Jaime Vera,Avenida,España,0,Coslada
+-3.54256666833606,40.4250530609021,Centro de Salud Valleaguado,Avenida,Principes de España,30,Coslada
 -3.8390881028657,40.1869797826129,Centro de Salud Dr. Aguilar,Calle,San Isidro,5,Cubas de la Sagra
 -3.58143415924905,40.7376594565399,Centro de Salud El Molar,Calle,San Isidro,0,El Molar
 -3.79317225553876,40.2900183520043,Centro de Salud Alicante,Calle,Alicante,3,Fuenlabrada
@@ -52,18 +52,18 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.80728603771729,40.2857224427582,Centro de Salud Francia,Calle,Francia,38,Fuenlabrada
 -3.79808059658083,40.2782185642243,Centro de Salud Panaderas,Calle,de las Panaderas,9,Fuenlabrada
 -3.83639809373322,40.29684020289,Centro de Salud Parque Loranca,Calle,Alegr,2,Fuenlabrada
--3.99734560596061,40.5840835857381,Centro de Salud Galapagar,Avda,Vvctimas del Terrorismo,3,Galapagar
+-3.99734560596061,40.5840835857381,Centro de Salud Galapagar,Avda,Víctimas del Terrorismo,3,Galapagar
 -3.73845304964414,40.3256065109909,Centro de Salud El Bercial,Avenida,del Parque,12,Getafe
 -3.73662734077001,40.2984193981159,Centro de Salud El Greco,Avenida,Reyes Cat licos,37,Getafe
 -3.71621771462939,40.3222867960407,Centro de Salud Getafe Norte,Avenida,Rigoberta Mench ,2,Getafe
 -3.72544479027477,40.3056974278841,Centro de Salud Juan de la Cierva,Avenida,Juan de la Cierva,0,Getafe
--3.71381539129119,40.3143555388923,Centro de Salud Las Ciudades,Calle,"Palestina, s/n esq. C/ Francisco Fernrndez Orddaez",0,Getafe
+-3.71381539129119,40.3143555388923,Centro de Salud Las Ciudades,Calle,"Palestina, s/n esq. C/ Francisco Fernrndez Ordaez",0,Getafe
 -3.7298933930486,40.3166696753677,Centro de Salud Margaritas,Calle,Magallanes,6,Getafe
 -3.65821845644377,40.3240998585812,Centro de Salud Perales del Rso,Calle,Juan de Mairena,0,Getafe
 -3.72287860260149,40.3133442847961,Centro de Salud Senchez Morate,Calle,Huelva,2,Getafe
 -3.74844956737523,40.296019143784,Centro de Salud Sector III,Avenida,Juan Carlos I,1,Getafe
 -3.85156455911357,40.2152410112641,Centro de Salud Griton,Calle,Calvario,1,Griñon
--4.08835705584957,40.6724287176994,Centro de Salud Guadarrama,Calle,de los Reyes CatGlicos,2,Guadarrama
+-4.08835705584957,40.6724287176994,Centro de Salud Guadarrama,Calle,de los Reyes Catolicos,2,Guadarrama
 -3.82813968435629,40.2545292696201,Centro de Salud Humanes,Calle,Ferrocarril,4,Humanes de Madrid
 -3.61438815629071,40.864246989786,Centro de Salud La Cabrera,Plaza,de la Concordia,2,La Cabrera
 -3.8782093995204,40.4896206409197,Centro de Salud El Abajen Las Rozas,Calle,Principado de Asturias,30,Las Rozas
@@ -72,7 +72,7 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.77623153105747,40.3209176506999,Centro de Salud Huerta de los Frailes,Avenida,de los Pinos,30,Leganés
 -3.74595518196333,40.3302431409499,Centro de Salud Jaime Vera,Avenida,Europa,1,Leganés
 -3.74827407343189,40.3451473151535,Centro de Salud Leganes-Norte,Calle,Carrmen Martln Gaite,16,Leganés
--3.75275641684224,40.3373973944846,Centro de Salud Maria Angeles Lrpez G,Calle,Maria Angeles L pez G mez,2,Leganés
+-3.75275641684224,40.3373973944846,Centro de Salud Maria Angeles Lrpez G,Calle,Maria Angeles López Gómez,2,Leganés
 -3.76711211446301,40.3367355007766,Centro de Salud Maria Angeles Lrpez G,Calle,Jesus Miguel Hadad Blanco,2,Leganés
 -3.74448238717801,40.3376221196645,Centro de Salud Maria Montessori,Avenida,Portugal,2,Leganés
 -3.7788369806416,40.3601889744713,Centro de Salud Marie Curie (La Fortuna),Calle,San Bernardo,13,Leganés
@@ -100,12 +100,12 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.69503767052519,40.3986422577424,Centro de Salud Cuceres,Calle,Caceres,4,Madrid
 -3.78158289648613,40.3939905277248,Centro de Salud Campamento,Calle,Mirue,5,Madrid
 -3.64787321005925,40.382069125904,Centro de Salud Campo de la Paloma,Calle,Villalobos,14,Madrid
--3.65273225190885,40.4411682995848,Centro de Salud Canal de Panaml,Calle,Verdaguer y GarcCa,56,Madrid
+-3.65273225190885,40.4411682995848,Centro de Salud Canal de Panaml,Calle, Verdaguer y García,56,Madrid
 -3.61435681032471,40.4443155556464,Centro de Salud Canillejas,Calle,Bolta,5,Madrid
 -3.75407430617665,40.3616503959201,Centro de Salud Carabanchel Alto,Avenida,de Carabanchel Alto,150,Madrid
 -3.72802786311968,40.40916903194,Centro de Salud Caramuel,Calle,Fuenteovejuna,17,Madrid
 -3.73129155740929,40.427589922387,Centro de Salud Casa de Campo,Calle,Ribera del Manzanares,113,Madrid
--3.68137641171261,40.4286426368381,Centro de Salud Castell ,Calle,Castelld,63,Madrid
+-3.68137641171261,40.4286426368381,Centro de Salud Castell ,Calle,Castelló,63,Madrid
 -3.70713729904452,40.4389474039187,Centro de Salud Cea Berm,Calle,Cea Bermedez,10,Madrid
 -3.74844992520971,40.4057593453952,Centro de Salud Cebreros,Calle,Cebreros,74,Madrid
 -3.60375077758824,40.3804340068265,Centro de Salud Cerro Almodovar,Calle,Fuentespina,2,Madrid
@@ -132,7 +132,7 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.72820528274364,40.390636276884,Centro de Salud General Ricardos,Calle,General Ricardos,131,Madrid
 -3.67152084611775,40.4215381170566,Centro de Salud Goya,Calle,O'Donnell,55,Madrid
 -3.74795982880254,40.3731857190519,Centro de Salud Guayaba,Calle,Antonia Rodrlguez Sacristin,4,Madrid
--3.71358822871566,40.4312681221481,Centro de Salud Guzmcn el Bueno,Calle,Guzmen El Bueno,11,Madrid
+-3.71358822871566,40.4312681221481,Centro de Salud Guzmcn el Bueno,Calle,Guzmán El Bueno,11,Madrid
 -3.67799739643174,40.4185183238094,Centro de Salud Ibiza,Calle,Ibiza,7,Madrid
 -3.69946576683525,40.4530120781516,Centro de Salud Infanta Mercedes,Calle,Infanta Mercedes,7,Madrid
 -3.7269273635859,40.4678696020453,Centro de Salud Isla de Oza,Calle,San Martin de Porres,6,Madrid
@@ -207,7 +207,7 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.6849944003502,40.484260760924,Centro de Salud Virgen de Begoca,Avenida,del Llano Castellano,3,Madrid
 -3.66336715850006,40.4878463555473,Centro de Salud Virgen del Cortijo,Avenida,Manoteras,47,Madrid
 -3.7816918932263,40.4563591250723,Centro de Salud Aravaca,Calle,Riaza,5,Madrid (Aravaca)
--3.86837152904379,40.4770375002994,Centro de Salud Cerro del Aire,Avenida,Espaia,7,Majadahonda
+-3.86837152904379,40.4770375002994,Centro de Salud Cerro del Aire,Avenida,España,7,Majadahonda
 -3.86499153163568,40.4489910649407,Centro de Salud Valle de la Oliva,Calle,Enrique Granados,2,Majadahonda
 -3.86198625057089,40.7298154306029,Centro de Salud Manzanares el Real,Calle,Calada de los Toros,8,Manzanares El Real
 -3.32971496538302,40.5507029717849,Centro de Salud Meco,Camino,Virgen de la Cabeza,6,Meco
@@ -248,20 +248,20 @@ LATITUD,LONGITUD,TIPOCEN2,TIPOVIAL,DIRECCION,NUM,MUNICIPIO
 -3.63229613700761,40.5591187501698,Centro de Salud Rosa Luxemburgo,Avenida,Aragin,6,San Sebastian de los Reyes
 -3.62269274321114,40.5501620580486,Centro de Salud V Centenario,Calle,Real,91,San Sebastian de los Reyes
 -3.78775139760999,40.7511105883664,Centro de Salud Soto del Real,Calle,Cristal,2,Soto del Real
--3.461246347215,40.4504332941306,Centro de Salud Brtjula,Calle,Brljula,0,Torrejón de Ardoz
+-3.461246347215,40.4504332941306,Centro de Salud Brújula,Calle,Brújula,0,Torrejón de Ardoz
 -3.48375948871359,40.4587196813994,Centro de Salud Fronteras,Calle,Puerto de Navacerrada,4,Torrejón de Ardoz
 -3.45929891449588,40.4640537115225,Centro de Salud Juncal,Avenida,Madrid c/v Brasil,39,Torrejón de Ardoz
--3.45257971900756,40.457638752723,Centro de Salud La Plata,Avenida,Uninn Europea,4,Torrejón de Ardoz
+-3.45257971900756,40.457638752723,Centro de Salud La Plata,Avenida,Unión Europea,4,Torrejón de Ardoz
 -3.47259670627437,40.4646938026538,Centro de Salud Las Veredillas,Calle,Turln,37,Torrejón de Ardoz
--3.4704939252982,40.4439455415741,Centro de Salud Los Fresnos,Calle,Zeus c/v Joaqudn Blume,0,Torrejón de Ardoz
+-3.4704939252982,40.4439455415741,Centro de Salud Los Fresnos,Calle,Zeus c/v Joaquín Blume,0,Torrejón de Ardoz
 -3.53862878266562,40.8238354885292,Centro de Salud Torrelaguna,Calle,Malacuera,26,Torrelaguna
 -3.92952653356911,40.58108181482,Centro de Salud Torrelodones,Avenida,de la Dehesa,63,Torrelodones
 -3.36395481735622,40.4067260323922,Centro de Salud Torres de la Alameda,Plaza,del Juego de la Pelota,6,Torres de la Alameda
 -3.71261077924314,40.6063978192903,Centro de Salud Tres Cantos,Calle,Sector Oficios,12,Tres Cantos
 -3.70350458716399,40.5991925873192,Centro de Salud Tres Cantos II,Calle,Sector Embarcaciones,36,Tres Cantos
--3.67812299355213,40.1851065229896,Centro de Salud El Reston,Avenida,Mar Mediterrlneo,1,Valdemoro
+-3.67812299355213,40.1851065229896,Centro de Salud El Reston,Avenida,Mar Mediterráneo,1,Valdemoro
 -3.68527695474173,40.1921277662638,Centro de Salud Valdemoro,Calle,Parla,14,Valdemoro
 -4.30019400036425,40.274539391898,Centro de Salud Villa del Prado,Paseo,de la Estaciln,2,Villa del Prado
--4.0018343753825,40.4468049810984,Centro de Salud Villanueva de la Caaada,Calle,de las Eras de MVstoles,18, Villanueva de la Cañada
+-4.0018343753825,40.4468049810984,Centro de Salud Villanueva de la Caaada,Calle,de las Eras de Móstoles,18, Villanueva de la Cañada
 -3.27526395728037,40.1702689217791,Centro de Salud Villarejo de Salvanas,Calle,Hospital,7,Villarejo de Salvanés
--3.90826388474978,40.3591098023349,Centro de Salud Villaviciosa de Odnn,Avenida,Principe de Asturias,173,Villaviciosa de Odín
+-3.90826388474978,40.3591098023349,Centro de Salud Villaviciosa de Odín,Avenida,Principe de Asturias,173,Villaviciosa de Odín
