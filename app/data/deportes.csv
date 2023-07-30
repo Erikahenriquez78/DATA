@@ -1,0 +1,77 @@
+,Actividad,Cal/Kg/h,Equipo,Equipamiento,Contacto,Pelota,Raqueta,Aire libre
+0,BMX,8.504,0,1,0,0,0,1
+1,Ciclismo_1.0,3.999,0,1,0,0,0,1
+2,Ciclismo_2.0,5.998,0,1,0,0,0,1
+3,Ciclismo_3.0,8.004,0,1,0,0,0,1
+4,Ciclismo_4.0,10.004,0,1,0,0,0,1
+5,Ciclismo_5.0,12.003,0,1,0,0,0,1
+6,Ciclismo estacionario_1.0,2.999,0,0,0,0,0,0
+7,Ciclismo estacionario_2.0,5.502,0,0,0,0,0,0
+8,Ciclismo estacionario_3.0,7.001,0,0,0,0,0,0
+9,Ciclismo estacionario_4.0,10.504,0,0,0,0,0,0
+10,Ciclismo estacionario_5.0,12.507,0,0,0,0,0,0
+11,Calistenia_1.0,3.502,0,0,0,0,0,0
+12,Calistenia_2.0,8.004,0,0,0,0,0,0
+13,Entrenamiento en circuito,8.004,0,0,0,0,0,0
+14,Levantamiento de peso_1.0,2.999,0,0,0,0,0,0
+15,Levantamiento de peso_2.0,5.998,0,0,0,0,0,0
+16,Máquina escaladora,9.001,0,0,0,0,0,0
+17,Aeróbicos_1.0,5.002,0,0,0,0,0,0
+18,Aeróbicos_2.0,6.502,0,0,0,0,0,0
+19,Aeróbicos_3.0,7.001,0,0,0,0,0,0
+20,Yoga,3.999,0,0,0,0,0,0
+21,Aeróbicos acuáticos,3.999,0,0,0,0,0,0
+22,Correr,8.004,0,0,0,0,0,1
+23,Atletismo_1.0,3.999,0,0,0,0,0,0
+24,Atletismo_2.0,5.998,0,0,0,0,0,0
+25,Atletismo_3.0,10.004,0,0,0,0,0,0
+26,Bádminton,4.505,1,1,0,0,1,0
+27,Baloncesto,7.001,1,0,0,1,0,0
+28,Bolos,2.999,0,0,0,1,0,0
+29,Billar,2.503,0,0,0,0,0,0
+30,Boxeo,7.499,0,0,1,0,0,0
+31,Dardos,2.503,0,0,0,0,0,0
+32,Frisbee,2.999,1,1,0,0,0,1
+33,Ultimate frisbee,8.004,1,1,0,0,0,0
+34,Golf,4.505,0,1,0,0,0,1
+35,Minigolf,2.999,0,0,0,0,0,1
+36,Gimnasia,3.999,0,0,0,0,0,0
+37,Balonmano,12.003,1,0,0,1,0,0
+38,Hockey,8.004,1,1,0,0,0,0
+39,Petanca,2.999,0,0,0,1,0,1
+40,Calva,2.999,0,0,0,1,0,1
+41,Artes marciales,10.004,1,0,1,0,0,0
+42,Kickboxing,10.004,0,0,1,0,0,0
+43,Kickball,7.001,1,0,0,1,0,1
+44,Padel,5.998,1,1,0,1,1,0
+45,Raquetbol,7.001,1,1,0,1,1,0
+46,Escalada,9.504,0,0,0,0,0,0
+47,Salto a la comba_1.0,8.004,0,1,0,0,0,0
+48,Salto a la comba_2.0,10.004,0,1,0,0,0,0
+49,Salto a la comba_3.0,12.003,0,1,0,0,0,0
+50,Chito,2.999,0,0,0,1,0,1
+51,Skateboard,5.002,0,1,0,0,0,0
+52,Patinaje,7.001,0,1,0,0,0,0
+53,Fútbol,10.004,1,0,0,1,0,0
+54,Fútbol sala,7.001,1,0,0,1,0,0
+55,Sóftbol,5.002,1,1,0,1,0,0
+56,Béisbol,5.002,1,1,0,1,0,0
+57,Tenis de mesa,3.999,1,1,0,1,1,0
+58,Tai chi,3.999,0,0,0,0,0,0
+59,Tenis,7.503,1,1,0,1,1,0
+60,Tenis en pareja,5.998,1,1,0,1,1,0
+61,Voleibol,8.004,1,0,0,1,0,0
+62,Marcha rápida,6.502,0,0,0,0,0,1
+63,Montañismo,8.004,0,0,0,0,0,1
+64,Caminar_1.0,2.999,0,0,0,0,0,1
+65,Caminar_2.0,5.002,0,0,0,0,0,1
+66,Caminar_3.0,6.301,0,0,0,0,0,1
+67,Natación_1.0,5.998,0,0,0,0,0,0
+68,Natación_2.0,8.004,0,0,0,0,0,0
+69,Natación_3.0,10.337,0,0,0,0,0,0
+70,Nado sincronizado,8.004,1,0,0,0,0,0
+71,Waterpolo,10.004,1,0,0,1,0,0
+72,Voleibol acuático,2.999,1,0,0,1,0,0
+73,Patinaje sobre hielo,12.003,0,0,0,0,0,0
+74,Frontenis,7.503,0,1,0,1,1,0
+75,Senderismo,5.998,0,0,0,0,0,1
