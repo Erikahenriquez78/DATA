@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "e740c626-f371-444a-833a-b78d7d162347",
+		"name": "api_desfío",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19154441"
+	},
+	"item": [
+		{
+			"name": "v2",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
