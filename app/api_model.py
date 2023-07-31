@@ -12,11 +12,11 @@ app.config['DEBUG'] = True
 
 
 # Cargar el DataFrame deportes_normalized desde el archivo
-with open(r'.\models\deportes_normalized.pkl', 'rb') as f:
+with open('models/deportes_normalized.pkl', 'rb') as f:
     deportes_normalized = pickle.load(f)
 
-deportes = pd.read_csv(r'.\data\deportes.csv', index_col=0)
-items = pd.read_csv(r'.\data\items.csv', index_col=0)
+deportes = pd.read_csv('data/deportes.csv', index_col=0)
+items = pd.read_csv('data/items.csv', index_col=0)
 
 
 @app.route("/", methods=['GET'])
@@ -107,5 +107,5 @@ def v1():
 
 #     return "Retraining completed!"
 
-app.run()
+app.run(debug=True, host='0.0.0.0', port=os.environ.get("PORT", 5000))
 
