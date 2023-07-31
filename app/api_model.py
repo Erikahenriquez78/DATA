@@ -1,4 +1,7 @@
-from flask import Flask, request
+from datetime import date
+from flask import Flask, jsonify, request
+from google.cloud import bigquery
+from google.oauth2 import service_account
 from src.data_processing import *
 import pandas as pd
 import os
@@ -58,7 +61,24 @@ def v1():
         return v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posicion,
                              distancia, clima, temperatura, humedad, deportes_normalized, deportes, items)
 
+@app.route("/actividades", methods=['GET'])
+def actividades():
+    hoy = date.today().strftime("%d-%m-%Y")
+    key_path = "../key.json"
+    credentials = service_account.Credentials.from_service_account_file(key_path)
+    client = bigquery.Client(credentials=credentials, project=credentials.project_id,)
 
+    query = f'''
+    SELECT *
+    FROM tripulacionesgrupo5.app_dataset.actividades
+    WHERE Fecha = '{hoy}'
+    '''
+    query_job = client.query(query)
+    results = query_job.result()
+
+    listadehoy = pd.DataFrame([dict(row) for row in results])
+
+    return jsonify(listadehoy.to_dict(orient='records'))
 
 # @app.route('/v2/ingest_data', methods=['POST'])
 # def ingest_data():
