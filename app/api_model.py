@@ -8,7 +8,7 @@ import pickle
 os.chdir(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
+app.config['DEBUG'] = False
 
 
 # Cargar el DataFrame deportes_normalized desde el archivo
@@ -107,5 +107,5 @@ def v1():
 
 #     return "Retraining completed!"
 
-app.run(debug=True, host='0.0.0.0', port=os.environ.get("PORT", 5000))
+app.run(debug=False, host='0.0.0.0', port=os.environ.get("PORT", 5000))
 
