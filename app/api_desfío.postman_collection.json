@@ -7,6 +7,14 @@
 	},
 	"item": [
 		{
+			"name": "v1",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
 			"name": "v2",
 			"request": {
 				"method": "GET",

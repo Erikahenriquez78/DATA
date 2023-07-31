@@ -26,15 +26,15 @@ def hello():
 @app.route('/v1', methods=['GET'])
 def v1():
 
-    edad = float(request.args.get('edad', None))
-    sexo = float(request.args.get('sexo', None))
+    edad = int(request.args.get('edad', None))
+    sexo = int(request.args.get('sexo', None))
     peso = float(request.args.get('peso', None))
-    condicion = str(request.args.get('condicion', None)) # baja media alta
-    objetivo = str(request.args.get('objetivo', None)) # suave medio intenso
+    condicion = int(request.args.get('condicion', None)) # baja media alta
+    objetivo = int(request.args.get('objetivo', None)) # suave medio intenso
     preferencias = request.args.get('preferencias', None) # listado deportes preferidos
     posicion = request.args.get('posicion', None) # [lat, lon]
     distancia = float(request.args.get('distancia', None)) # en km
-    clima = str(request.args.get('clima', None)) # soleado nublado lluvioso
+    clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
     temperatura = float(request.args.get('temperatura', None)) # ºC
     humedad = float(request.args.get('humedad', None))
 
