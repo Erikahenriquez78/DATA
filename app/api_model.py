@@ -64,7 +64,7 @@ def v1():
 @app.route("/actividades", methods=['GET'])
 def actividades():
     hoy = date.today().strftime("%d-%m-%Y")
-    key_path = "../key.json"
+    key_path = "key.json"
     credentials = service_account.Credentials.from_service_account_file(key_path)
     client = bigquery.Client(credentials=credentials, project=credentials.project_id,)
 
