@@ -15,8 +15,8 @@ app.config['DEBUG'] = True
 with open(r'.\models\deportes_normalized.pkl', 'rb') as f:
     deportes_normalized = pickle.load(f)
 
-deportes = pd.read_csv(r'.\data\deportes.csv')
-items = pd.read_csv(r'.\data\items.csv')
+deportes = pd.read_csv(r'.\data\deportes.csv', index_col=0)
+items = pd.read_csv(r'.\data\items.csv', index_col=0)
 
 
 @app.route("/", methods=['GET'])
@@ -59,35 +59,6 @@ def v1():
                              distancia, clima, temperatura, humedad, deportes_normalized, deportes, items)
 
 
-@app.route('/v2', methods=['GET'])
-def v2():
-    global deportes_normalized
-    global deportes
-    global items
-
-    intensidad = int(request.args.get('intensidad', None))
-    equipo = int(request.args.get('equipo', None))
-    equipamiento = int(request.args.get('equipamiento', None))
-    contacto = int(request.args.get('contacto', None))
-    pelota = int(request.args.get('pelota', None))
-    raqueta = int(request.args.get('raqueta', None))
-    aire_libre = int(request.args.get('aire_libre', None))
-
-
-
-    if intensidad is None or \
-    equipo is None or \
-    equipamiento is None or \
-    contacto is None or \
-    pelota is None or \
-    raqueta is None or \
-    aire_libre is None:
-
-        return "Missing args, the input values are needed to predict"
-    
-    else:
-        return v2_query_process(equipo, equipamiento, contacto, pelota, raqueta, aire_libre,
-                                deportes_normalized, deportes, items)
 
 # @app.route('/v2/ingest_data', methods=['POST'])
 # def ingest_data():
