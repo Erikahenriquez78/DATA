@@ -1,11 +1,14 @@
 from datetime import date
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_file
 from google.cloud import bigquery
 from google.oauth2 import service_account
+import io
+import matplotlib.pyplot as plt
 from src.data_processing import *
 import pandas as pd
 import os
 import pickle
+import seaborn as sns
 
 
 os.chdir(os.path.dirname(__file__))
@@ -134,7 +137,17 @@ def v2():
 @app.route('/similitud', methods=['GET'])
 def similitud():
     
-    sim_mat_plot(similarity)
+    plt.figure(figsize=(25, 25))
+    sns.heatmap(similarity, xticklabels=False, cmap="Blues", linewidths=0.5)
+    plt.title('Similitud Entre Deportes Estudiados')
+    plt.ylabel('Deportes');
+
+    img_buf = io.BytesIO()
+    plt.savefig(img_buf, format='png') 
+    plt.close()
+
+    img_data = img_buf.getvalue()
+    return send_file(io.BytesIO(img_data), mimetype='image/png')
 
 @app.route("/actividades", methods=['GET'])
 def actividades():
