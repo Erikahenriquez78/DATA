@@ -137,9 +137,10 @@ def v1():
 
 @app.route('/similitud', methods=['GET'])
 def similitud():
-    
+    similarity = pd.read_csv('data/similarity.csv', index_col=0)
+    simil = similarity.T
     plt.figure(figsize=(25, 25))
-    sns.heatmap(similarity, xticklabels=False, cmap="Blues", linewidths=0.5)
+    sns.heatmap(simil, xticklabels=False, cmap="Blues", linewidths=0.5)
     plt.title('Similitud Entre Deportes Estudiados')
     plt.ylabel('Deportes');
 
