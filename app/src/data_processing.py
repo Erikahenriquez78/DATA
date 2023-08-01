@@ -6,6 +6,7 @@ import seaborn as sns
 import ast
 import math
 
+
 def haversine_distance(lat1, lon1, lat2, lon2):
     r = 6371  # Radio medio de la Tierra en kilómetros
 
@@ -26,6 +27,7 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
+
 def v1_intensidad_process(intensidad):
     if intensidad == 0:
         return 2.0
@@ -35,11 +37,6 @@ def v1_intensidad_process(intensidad):
         return 10.0
     else:
         print('Intensidad no válida')
-        
-
-def sim_mat_plot(similarity):
-    sns.heatmap(similarity, center=0)
-    return plt.show()
 
     
 def v1_query_process(preferencias, posicion, distancia, similitud, deportes_normalized, deportes, items):
