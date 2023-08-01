@@ -21,8 +21,8 @@ app.config['DEBUG'] = False
 with open('models/deportes_normalized.pkl', 'rb') as f:
     deportes_normalized = pickle.load(f)
 
-# with open('models/randomforest.pkl', 'rb') as f:
-#     modelo = pickle.load(f)
+with open('models/randomforest.pkl', 'rb') as f:
+    modelo = pickle.load(f)
 
 deportes = pd.read_csv('data/deportes.csv', index_col=0)
 items = pd.read_csv('data/items.csv', index_col=0)
@@ -69,7 +69,6 @@ def v1():
     else:
         return v1_query_process(preferencias, posicion, distancia, similitud, deportes_normalized, deportes, items)
 
-<<<<<<< HEAD
 @app.route('/v2', methods=['GET'])
 def v2():
     edad = int(request.args.get('edad', None))
@@ -97,42 +96,8 @@ def v2():
     temperatura is None or \
     deporte is None or \
     humedad is None:
-=======
-# @app.route('/v2', methods=['GET'])
-# def v2():
-#     edad = int(request.args.get('edad', None))
-#     sexo = int(request.args.get('sexo', None))
-#     peso = float(request.args.get('peso', None))
-#     condicion = int(request.args.get('condicion', None)) # baja media alta
-#     objetivo = int(request.args.get('objetivo', None)) # suave medio intenso
-#     preferencias = request.args.get('preferencias', None) # listado deportes preferidos
-#     posicion = request.args.get('posicion', None) # [lat, lon]
-#     distancia = int(request.args.get('distancia', None)) # en km
-#     clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
-#     temperatura = float(request.args.get('temperatura', None)) # ºC
-#     humedad = int(request.args.get('humedad', None))
-#     # deporte = str(request.args.get('preferencias', None))
 
-#     if edad is None or \
-#     sexo is None or \
-#     peso is None or \
-#     condicion is None or \
-#     objetivo is None or \
-#     preferencias is None or \
-#     posicion is None or \
-#     distancia is None or \
-#     clima is None or \
-#     temperatura is None or \
-#     humedad is None:
->>>>>>> 3f25184627d380f95f9bcd752b0d1b56e25dfca2
 
-#         return "Missing args, the input values are needed to predict"
-    
-#     else:
-#         preferencias_list = ast.literal_eval(preferencias)  # Convertir preferencias a una lista
-#         return jsonify(v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias_list,
-#                                         posicion, distancia, clima, temperatura, humedad, modelo))
-        
     # edad = int(request.args.get('edad', None))
     # sexo = int(request.args.get('sexo', None))
     # peso = int(request.args.get('peso', None)).round(2)
@@ -157,11 +122,12 @@ def v2():
     # temperatura is None or \
     # humedad is None:
 
-    #     return "Missing args, the input values are needed to predict"
+        return "Missing args, the input values are needed to predict"
     
-    # else:
-    #     return v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
-    #                             posicion, distancia, clima, temperatura, humedad,modelo)
+    else:
+        return v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
+                                posicion, distancia, clima, temperatura, humedad,modelo)
+
 
 
 

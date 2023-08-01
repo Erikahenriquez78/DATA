@@ -87,7 +87,6 @@ def v1_query_process(preferencias, posicion, distancia, similitud, deportes_norm
     return {"Deportes recomendados para el usuario": recomendaciones, "Items filtrados": items_filtrados}
 
 
-<<<<<<< HEAD
 def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
                       posicion,distancia, clima, temperatura, humedad,modelo):
 
@@ -102,8 +101,7 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
         'Distancia (Km)': int(distancia),
         'CondicionFisica': int(condicion),
         'DeportePracticado': str(preferencias),
-        'Deporte': str(preferencias),
-=======
+        'Deporte': str(preferencias)},index=[0])
 # def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
 #                       posicion,distancia, clima, temperatura, humedad,modelo):
 #     pass
@@ -118,7 +116,6 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
 #         'Distancia (Km)': int(distancia),
 #         'CondicionFisica': int(condicion),
 #         'DeportePracticado': str(preferencias)
->>>>>>> 3f25184627d380f95f9bcd752b0d1b56e25dfca2
         
 #         },index=[0])
     
@@ -132,7 +129,6 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
 #     condicion_fisica_dummies = pd.get_dummies(x['CondicionFisica'], prefix='Condicion')
 #     x = pd.concat([x, condicion_fisica_dummies], axis=1)
 
-<<<<<<< HEAD
     # Convertir columna de objetivo calórico en variables dummy
     objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
     x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
@@ -177,7 +173,7 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
     y_pred_list = y_pred.tolist()
 
     return {"Deporte recomendado": y_pred_list}
-=======
+
 #     # Convertir columna de objetivo calórico en variables dummy
 #     objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
 #     x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
@@ -197,4 +193,4 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
         
 
 #     return {y_pred}
->>>>>>> 3f25184627d380f95f9bcd752b0d1b56e25dfca2
+
