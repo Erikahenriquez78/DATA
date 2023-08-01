@@ -67,7 +67,6 @@ def v1():
 
 @app.route('/v2', methods=['GET'])
 def v2():
-        
     edad = int(request.args.get('edad', None))
     sexo = int(request.args.get('sexo', None))
     peso = float(request.args.get('peso', None))
@@ -75,10 +74,11 @@ def v2():
     objetivo = int(request.args.get('objetivo', None)) # suave medio intenso
     preferencias = request.args.get('preferencias', None) # listado deportes preferidos
     posicion = request.args.get('posicion', None) # [lat, lon]
-    distancia = float(request.args.get('distancia', None)) # en km
+    distancia = int(request.args.get('distancia', None)) # en km
     clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
     temperatura = float(request.args.get('temperatura', None)) # ºC
-    humedad = float(request.args.get('humedad', None))
+    humedad = int(request.args.get('humedad', None))
+    # deporte = str(request.args.get('preferencias', None))
 
     if edad is None or \
     sexo is None or \
@@ -95,8 +95,39 @@ def v2():
         return "Missing args, the input values are needed to predict"
     
     else:
-        return v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
-                                posicion, distancia, clima, temperatura, humedad)
+        preferencias_list = ast.literal_eval(preferencias)  # Convertir preferencias a una lista
+        return jsonify(v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias_list,
+                                        posicion, distancia, clima, temperatura, humedad, modelo))
+        
+    # edad = int(request.args.get('edad', None))
+    # sexo = int(request.args.get('sexo', None))
+    # peso = int(request.args.get('peso', None)).round(2)
+    # condicion = int(request.args.get('condicion', None)) # baja media alta
+    # objetivo = int(request.args.get('objetivo', None)) # suave medio intenso
+    # preferencias = request.args.get('preferencias', None) # listado deportes preferidos
+    # posicion = request.args.get('posicion', None) # [lat, lon]
+    # distancia = int(request.args.get('distancia', None)) # en km
+    # clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
+    # temperatura = int(request.args.get('temperatura', None)) # ºC
+    # humedad = int(request.args.get('humedad', None))
+
+    # if edad is None or \
+    # sexo is None or \
+    # peso is None or \
+    # condicion is None or \
+    # objetivo is None or \
+    # preferencias is None or \
+    # posicion is None or \
+    # distancia is None or \
+    # clima is None or \
+    # temperatura is None or \
+    # humedad is None:
+
+    #     return "Missing args, the input values are needed to predict"
+    
+    # else:
+    #     return v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
+    #                             posicion, distancia, clima, temperatura, humedad,modelo)
 
 
 
