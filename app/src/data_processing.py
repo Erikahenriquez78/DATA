@@ -1,6 +1,8 @@
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 import ast
 
 def v2_intensidad_process(intensidad):
@@ -12,6 +14,11 @@ def v2_intensidad_process(intensidad):
         return 10.0
     else:
         print('Intensidad no válida')
+        
+
+def sim_mat_plot(similarity):
+    sns.heatmap(similarity, cmap='coolwarm', center=0)
+    return plt.show()
 
     
 def v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posicion,
@@ -33,7 +40,7 @@ def v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posici
     indices_similares = similarity_scores.argsort()[0][::-1]
 
     # Establecer el umbral de similitud
-    umbral_similitud = 0.8
+    umbral_similitud = 0.5
 
     # Obtener las recomendaciones finales
     recomendaciones = []
@@ -42,3 +49,7 @@ def v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posici
             recomendaciones.append(deportes['Actividad'].iloc[indice])
 
     return {"Deportes recomendados para el usuario": recomendaciones}
+
+
+def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
+                     posicion, distancia, clima, temperatura, humedad):
