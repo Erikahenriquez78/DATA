@@ -42,8 +42,7 @@ def sim_mat_plot(similarity):
     return plt.show()
 
     
-def v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posicion,
-                  distancia, clima, temperatura, humedad, deportes_normalized, deportes, items):
+def v1_query_process(preferencias, posicion, distancia, similitud, deportes_normalized, deportes, items):
     
     # Convertir las preferencias en una lista de deportes
     preferencias = ast.literal_eval(preferencias)
@@ -66,7 +65,7 @@ def v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posici
     indices_similares = similarity_scores.argsort()[0][::-1]
 
     # Establecer el umbral de similitud
-    umbral_similitud = 0.5
+    umbral_similitud = similitud
 
     # Obtener las recomendaciones finales
     recomendaciones = []
@@ -91,49 +90,49 @@ def v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posici
     return {"Deportes recomendados para el usuario": recomendaciones, "Items filtrados": items_filtrados}
 
 
-def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
-                      posicion,distancia, clima, temperatura, humedad,modelo):
-    pass
-    x = pd.DataFrame({
-        'Clima': int(clima),
-        'Temperatura (°C)': int(temperatura),
-        'Humedad': int(humedad),
-        'Edad': int(edad),
-        'Genero': int(sexo),
-        'Peso (Kg)': int(peso),
-        'ObjetivoCalorico': int(objetivo),
-        'Distancia (Km)': int(distancia),
-        'CondicionFisica': int(condicion),
-        'DeportePracticado': str(preferencias)
+# def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
+#                       posicion,distancia, clima, temperatura, humedad,modelo):
+#     pass
+#     x = pd.DataFrame({
+#         'Clima': int(clima),
+#         'Temperatura (°C)': int(temperatura),
+#         'Humedad': int(humedad),
+#         'Edad': int(edad),
+#         'Genero': int(sexo),
+#         'Peso (Kg)': int(peso),
+#         'ObjetivoCalorico': int(objetivo),
+#         'Distancia (Km)': int(distancia),
+#         'CondicionFisica': int(condicion),
+#         'DeportePracticado': str(preferencias)
         
-        },index=[0])
+#         },index=[0])
     
-    clima_dummies = pd.get_dummies(x['Clima'], prefix='Clima')   
-    x = pd.concat([x, clima_dummies], axis=1)
+#     clima_dummies = pd.get_dummies(x['Clima'], prefix='Clima')   
+#     x = pd.concat([x, clima_dummies], axis=1)
 
-    genero_dummies = pd.get_dummies(x['Genero'], prefix='Genero')
-    x = pd.concat([x, genero_dummies], axis=1)
+#     genero_dummies = pd.get_dummies(x['Genero'], prefix='Genero')
+#     x = pd.concat([x, genero_dummies], axis=1)
 
-    # Convertir columna de condición física en variables dummy
-    condicion_fisica_dummies = pd.get_dummies(x['CondicionFisica'], prefix='Condicion')
-    x = pd.concat([x, condicion_fisica_dummies], axis=1)
+#     # Convertir columna de condición física en variables dummy
+#     condicion_fisica_dummies = pd.get_dummies(x['CondicionFisica'], prefix='Condicion')
+#     x = pd.concat([x, condicion_fisica_dummies], axis=1)
 
-    # Convertir columna de objetivo calórico en variables dummy
-    objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
-    x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
+#     # Convertir columna de objetivo calórico en variables dummy
+#     objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
+#     x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
 
 
-    # Convertir columna de deportes practicados en variables dummy
-    deporte_practicado_dummies = x['DeportePracticado'].apply(lambda x: '|'.join(x)).str.get_dummies()
-    x = pd.concat([x, deporte_practicado_dummies], axis=1)
+#     # Convertir columna de deportes practicados en variables dummy
+#     deporte_practicado_dummies = x['DeportePracticado'].apply(lambda x: '|'.join(x)).str.get_dummies()
+#     x = pd.concat([x, deporte_practicado_dummies], axis=1)
 
-    # Eliminar columnas originales que ya no son necesarias
-    x.drop(['Clima', 'CondicionFisica', 'ObjetivoCalorico','Genero','DeportePracticado'], axis=1, inplace=True)
-    print(x.shape)
-    print(x)
-    y_pred = modelo.predict(x)
+#     # Eliminar columnas originales que ya no son necesarias
+#     x.drop(['Clima', 'CondicionFisica', 'ObjetivoCalorico','Genero','DeportePracticado'], axis=1, inplace=True)
+#     print(x.shape)
+#     print(x)
+#     y_pred = modelo.predict(x)
         
         
         
 
-    return {y_pred}
+#     return {y_pred}

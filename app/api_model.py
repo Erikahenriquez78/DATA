@@ -18,8 +18,8 @@ app.config['DEBUG'] = False
 with open('models/deportes_normalized.pkl', 'rb') as f:
     deportes_normalized = pickle.load(f)
 
-with open('models/randomforest.pkl', 'rb') as f:
-    modelo = pickle.load(f)
+# with open('models/randomforest.pkl', 'rb') as f:
+#     modelo = pickle.load(f)
 
 deportes = pd.read_csv('data/deportes.csv', index_col=0)
 items = pd.read_csv('data/items.csv', index_col=0)
@@ -44,6 +44,7 @@ def v1():
     clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
     temperatura = float(request.args.get('temperatura', None)) # ºC
     humedad = float(request.args.get('humedad', None))
+    similitud = float(request.args.get('similitud', None)) # entre 0 y 1
 
 
 
@@ -57,47 +58,47 @@ def v1():
     distancia is None or \
     clima is None or \
     temperatura is None or \
-    humedad is None:
+    humedad is None or \
+    similitud is None:
 
         return "Missing args, the input values are needed to predict"
     
     else:
-        return v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posicion,
-                             distancia, clima, temperatura, humedad, deportes_normalized, deportes, items)
+        return v1_query_process(preferencias, posicion, distancia, similitud, deportes_normalized, deportes, items)
 
-@app.route('/v2', methods=['GET'])
-def v2():
-    edad = int(request.args.get('edad', None))
-    sexo = int(request.args.get('sexo', None))
-    peso = float(request.args.get('peso', None))
-    condicion = int(request.args.get('condicion', None)) # baja media alta
-    objetivo = int(request.args.get('objetivo', None)) # suave medio intenso
-    preferencias = request.args.get('preferencias', None) # listado deportes preferidos
-    posicion = request.args.get('posicion', None) # [lat, lon]
-    distancia = int(request.args.get('distancia', None)) # en km
-    clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
-    temperatura = float(request.args.get('temperatura', None)) # ºC
-    humedad = int(request.args.get('humedad', None))
-    # deporte = str(request.args.get('preferencias', None))
+# @app.route('/v2', methods=['GET'])
+# def v2():
+#     edad = int(request.args.get('edad', None))
+#     sexo = int(request.args.get('sexo', None))
+#     peso = float(request.args.get('peso', None))
+#     condicion = int(request.args.get('condicion', None)) # baja media alta
+#     objetivo = int(request.args.get('objetivo', None)) # suave medio intenso
+#     preferencias = request.args.get('preferencias', None) # listado deportes preferidos
+#     posicion = request.args.get('posicion', None) # [lat, lon]
+#     distancia = int(request.args.get('distancia', None)) # en km
+#     clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
+#     temperatura = float(request.args.get('temperatura', None)) # ºC
+#     humedad = int(request.args.get('humedad', None))
+#     # deporte = str(request.args.get('preferencias', None))
 
-    if edad is None or \
-    sexo is None or \
-    peso is None or \
-    condicion is None or \
-    objetivo is None or \
-    preferencias is None or \
-    posicion is None or \
-    distancia is None or \
-    clima is None or \
-    temperatura is None or \
-    humedad is None:
+#     if edad is None or \
+#     sexo is None or \
+#     peso is None or \
+#     condicion is None or \
+#     objetivo is None or \
+#     preferencias is None or \
+#     posicion is None or \
+#     distancia is None or \
+#     clima is None or \
+#     temperatura is None or \
+#     humedad is None:
 
-        return "Missing args, the input values are needed to predict"
+#         return "Missing args, the input values are needed to predict"
     
-    else:
-        preferencias_list = ast.literal_eval(preferencias)  # Convertir preferencias a una lista
-        return jsonify(v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias_list,
-                                        posicion, distancia, clima, temperatura, humedad, modelo))
+#     else:
+#         preferencias_list = ast.literal_eval(preferencias)  # Convertir preferencias a una lista
+#         return jsonify(v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias_list,
+#                                         posicion, distancia, clima, temperatura, humedad, modelo))
         
     # edad = int(request.args.get('edad', None))
     # sexo = int(request.args.get('sexo', None))
@@ -155,53 +156,6 @@ def actividades():
     listadehoy = pd.DataFrame([dict(row) for row in results])
 
     return jsonify(listadehoy.to_dict(orient='records'))
-
-# @app.route('/v2/ingest_data', methods=['POST'])
-# def ingest_data():
-#     tv = request.args.get('tv', None)
-#     radio = request.args.get('radio', None)
-#     newspaper = request.args.get('newspaper', None)
-#     sales = request.args.get('sales', None)
-
-#     connection = sqlite3.connect('data/ingest_data.db')
-#     cursor = connection.cursor()
-#     query = f'''
-#             INSERT INTO advertising (tv, radio, newpaper, sales)
-#             VALUES ({tv}, {radio}, {newspaper}, {sales})
-#             '''
-#     result = cursor.execute(query).fetchall()
-    
-#     connection.commit()
-#     connection.close()
-
-#     return "Data ingested successfully!"
-
-# @app.route('/v2/retrain', methods=['PUT'])
-# def retrian():
-#     connection = sqlite3.connect('data/ingest_data.db')
-#     cursor = connection.cursor()
-#     query = 'SELECT * FROM advertising'
-#     result = cursor.execute(query).fetchall()
-
-#     X = []
-#     y = []
-#     for row in result:
-#         tv, radio, newspaper, sales = row
-#         X.append([tv, radio, newspaper])
-#         y.append(sales)
-
-#     with open('data/advertising_model', 'rb') as f:
-#         model = pickle.load(f)
-
-#     model.fit(X,y)
-
-#     with open('data/advertising_model', 'wb') as f:
-#         pickle.dump(model, f)
-
-
-#     connection.close()
-
-#     return "Retraining completed!"
 
 app.run(debug=False, host='0.0.0.0', port=os.environ.get("PORT", 5000))
 
