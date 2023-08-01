@@ -78,7 +78,7 @@ def v2():
     clima = int(request.args.get('clima', None)) # soleado nublado lluvioso
     temperatura = float(request.args.get('temperatura', None)) # ºC
     humedad = int(request.args.get('humedad', None))
-    # deporte = str(request.args.get('preferencias', None))
+    deporte = str(request.args.get('preferencias', None))
 
     if edad is None or \
     sexo is None or \
@@ -90,6 +90,7 @@ def v2():
     distancia is None or \
     clima is None or \
     temperatura is None or \
+    deporte is None or \
     humedad is None:
 
         return "Missing args, the input values are needed to predict"

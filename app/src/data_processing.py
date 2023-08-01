@@ -64,7 +64,8 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
         'ObjetivoCalorico': int(objetivo),
         'Distancia (Km)': int(distancia),
         'CondicionFisica': int(condicion),
-        'DeportePracticado': str(preferencias)
+        'DeportePracticado': str(preferencias),
+        'Deporte': str(preferencias),
         
         },index=[0])
     
@@ -81,19 +82,44 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
     # Convertir columna de objetivo calórico en variables dummy
     objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
     x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
-
-
+    # deportes_df = pd.read_csv(r'C:\Users\de969\OneDrive\Escritorio\DESAFIO-DE-TRIPULACIONES\Raw_Datasets\dataframe_ytest.csv', sep=',')
+    # x = pd.concat([x, deportes_df], axis=1)
     # Convertir columna de deportes practicados en variables dummy
     deporte_practicado_dummies = x['DeportePracticado'].apply(lambda x: '|'.join(x)).str.get_dummies()
     x = pd.concat([x, deporte_practicado_dummies], axis=1)
-
+    print(x)
+    
     # Eliminar columnas originales que ya no son necesarias
     x.drop(['Clima', 'CondicionFisica', 'ObjetivoCalorico','Genero','DeportePracticado'], axis=1, inplace=True)
-    print(x.shape)
-    print(x)
+    expected_columns = ['Temperatura (°C)', 'Humedad', 'Edad', 'Peso (Kg)', 'Distancia (Km)',
+        'Clima_Lluvioso', 'Clima_Nublado', 'Clima_Soleado',
+       'Genero_Hombre', 'Genero_Mujer', 'Condicion_0', 'Condicion_1',
+       'Condicion_2', 'Objetivo_0', 'Objetivo_1', 'Objetivo_2', 'Aeróbicos',
+       'Aeróbicos acuáticos', 'Artes marciales', 'Atletismo', 'BMX',
+       'Baloncesto', 'Balonmano', 'Billar', 'Bolos', 'Boxeo', 'Bádminton',
+       'Béisbol', 'Calistenia', 'Calva', 'Caminar', 'Chito', 'Ciclismo',
+       'Ciclismo estacionario', 'Correr', 'Dardos',
+       'Entrenamiento en circuito', 'Escalada', 'Frisbee', 'Frontenis',
+       'Fútbol', 'Fútbol sala', 'Gimnasia', 'Golf', 'Hockey', 'Kickball',
+       'Kickboxing', 'Levantamiento de peso', 'Marcha rápida', 'Minigolf',
+       'Montañismo', 'Máquina escaladora', 'Nado sincronizado', 'Natación',
+       'Padel', 'Patinaje', 'Patinaje sobre hielo', 'Petanca', 'Raquetbol',
+       'Salto a la comba', 'Senderismo', 'Skateboard', 'Sóftbol', 'Tai chi',
+       'Tenis', 'Tenis de mesa', 'Tenis en pareja', 'Ultimate frisbee',
+       'Voleibol', 'Voleibol acuático', 'Waterpolo', 'Yoga']
+    x = x.reindex(columns=expected_columns, fill_value=0)
+    
+     # Convertir y_pred a una lista o cualquier otro objeto hashable
+    # y_pred_list = y_pred.tolist()
+    
+    # print(x.shape)
+    # print(x)
+    # y_pred = modelo.predict(x)
+    # return {y_pred}
+    
     y_pred = modelo.predict(x)
-        
-        
-        
+    
+    # Convertir y_pred a una lista o cualquier otro objeto hashable
+    y_pred_list = y_pred.tolist()
 
-    return {y_pred}
+    return {"Deporte recomendado": y_pred_list}
