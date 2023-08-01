@@ -96,7 +96,7 @@ def v2():
     
     else:
         return v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
-                                posicion, distancia, clima, temperatura, humedad)
+                                posicion, distancia, clima, temperatura, humedad,modelo)
 
 
 
