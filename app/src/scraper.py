@@ -124,6 +124,10 @@ df.Duracion = df.Duracion.str.replace("'", " minutos")
 
 df = pd.merge(df, contacto, on='Centro', how='left')
 
+# Guardar una copia en local
+
+df.to_csv(f'../data/{date.today().strftime("%d-%m-%Y")}.csv', index=False)
+
 # Subida a la base de datos en Big Query
 
 key_path = '../key.json'
