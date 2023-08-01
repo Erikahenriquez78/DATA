@@ -1,4 +1,6 @@
 Flask==2.3.2
-pandas==1.5.2
-scikit-learn==1.2.2
 google-cloud-bigquery==3.11.4
+matplotlib==3.7.2
+pandas==1.5.2
+seaborn==0.12.2
+scikit-learn==1.2.2
