@@ -52,45 +52,46 @@ def v1_query_process(edad, sexo, peso, condicion, objetivo, preferencias, posici
 
 
 def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
-                     posicion, distancia, clima, temperatura, humedad,modelo):
+                      posicion,distancia, clima, temperatura, humedad,modelo):
 
-    df_historico = pd.DataFrame({
-        'Clima': clima,
-        'Temperatura (°C)': temperatura.round().astype(int),
+    x = pd.DataFrame({
+        'Clima': int(clima),
+        'Temperatura (°C)': int(temperatura),
         'Humedad': int(humedad),
         'Edad': int(edad),
         'Genero': int(sexo),
-        'Peso (Kg)': peso.round(2),
+        'Peso (Kg)': int(peso),
         'ObjetivoCalorico': int(objetivo),
-        'Distancia (Km)': int(distancia.round(2)),
+        'Distancia (Km)': int(distancia),
         'CondicionFisica': int(condicion),
-        'DeportePracticado': str(preferencias),
-        })
+        'DeportePracticado': str(preferencias)
+        
+        },index=[0])
     
-    clima_dummies = pd.get_dummies(df_historico['Clima'], prefix='Clima')   
-    df_historico = pd.concat([df_historico, clima_dummies], axis=1)
+    clima_dummies = pd.get_dummies(x['Clima'], prefix='Clima')   
+    x = pd.concat([x, clima_dummies], axis=1)
 
-    genero_dummies = pd.get_dummies(df_historico['Genero'], prefix='Genero')
-    df_historico = pd.concat([df_historico, genero_dummies], axis=1)
+    genero_dummies = pd.get_dummies(x['Genero'], prefix='Genero')
+    x = pd.concat([x, genero_dummies], axis=1)
 
     # Convertir columna de condición física en variables dummy
-    condicion_fisica_dummies = pd.get_dummies(df_historico['CondicionFisica'], prefix='Condicion')
-    df_historico = pd.concat([df_historico, condicion_fisica_dummies], axis=1)
+    condicion_fisica_dummies = pd.get_dummies(x['CondicionFisica'], prefix='Condicion')
+    x = pd.concat([x, condicion_fisica_dummies], axis=1)
 
     # Convertir columna de objetivo calórico en variables dummy
-    objetivos_caloricos_dummies = pd.get_dummies(df_historico['ObjetivoCalorico'], prefix='Objetivo')
-    df_historico = pd.concat([df_historico, objetivos_caloricos_dummies], axis=1)
-
+    objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
+    x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
 
 
     # Convertir columna de deportes practicados en variables dummy
-    deporte_practicado_dummies = df_historico['DeportePracticado'].apply(lambda x: '|'.join(x)).str.get_dummies()
-    df_historico = pd.concat([df_historico, deporte_practicado_dummies], axis=1)
+    deporte_practicado_dummies = x['DeportePracticado'].apply(lambda x: '|'.join(x)).str.get_dummies()
+    x = pd.concat([x, deporte_practicado_dummies], axis=1)
 
     # Eliminar columnas originales que ya no son necesarias
-    df_historico.drop(['Clima', 'CondicionFisica', 'ObjetivoCalorico','Genero','DeportePracticado'], axis=1, inplace=True)
-
-    y_pred = modelo.predict(df_historico)
+    x.drop(['Clima', 'CondicionFisica', 'ObjetivoCalorico','Genero','DeportePracticado'], axis=1, inplace=True)
+    print(x.shape)
+    print(x)
+    y_pred = modelo.predict(x)
         
         
         
