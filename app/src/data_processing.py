@@ -38,6 +38,9 @@ def v1_intensidad_process(intensidad):
     else:
         print('Intensidad no válida')
 
+def v2_clima(clima):
+    pass
+
     
 def v1_query_process(preferencias, posicion, distancia, similitud, deportes_normalized, deportes, items):
     
@@ -88,59 +91,11 @@ def v1_query_process(preferencias, posicion, distancia, similitud, deportes_norm
 
 
 def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
-                      posicion,distancia, clima, temperatura, humedad,modelo):
-
-    x = pd.DataFrame({
-        'Clima': int(clima),
-        'Temperatura (°C)': int(temperatura),
-        'Humedad': int(humedad),
-        'Edad': int(edad),
-        'Genero': int(sexo),
-        'Peso (Kg)': int(peso),
-        'ObjetivoCalorico': int(objetivo),
-        'Distancia (Km)': int(distancia),
-        'CondicionFisica': int(condicion),
-        'DeportePracticado': str(preferencias),
-        'Deporte': str(preferencias)},index=[0])
-# def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
-#                       posicion,distancia, clima, temperatura, humedad,modelo):
-#     pass
-#     x = pd.DataFrame({
-#         'Clima': int(clima),
-#         'Temperatura (°C)': int(temperatura),
-#         'Humedad': int(humedad),
-#         'Edad': int(edad),
-#         'Genero': int(sexo),
-#         'Peso (Kg)': int(peso),
-#         'ObjetivoCalorico': int(objetivo),
-#         'Distancia (Km)': int(distancia),
-#         'CondicionFisica': int(condicion),
-#         'DeportePracticado': str(preferencias)
-        
-#         },index=[0])
+                      posicion,distancia, clima, temperatura, humedad, modelo, gasto):
     
-#     clima_dummies = pd.get_dummies(x['Clima'], prefix='Clima')   
-#     x = pd.concat([x, clima_dummies], axis=1)
-
-#     genero_dummies = pd.get_dummies(x['Genero'], prefix='Genero')
-#     x = pd.concat([x, genero_dummies], axis=1)
-
-#     # Convertir columna de condición física en variables dummy
-#     condicion_fisica_dummies = pd.get_dummies(x['CondicionFisica'], prefix='Condicion')
-#     x = pd.concat([x, condicion_fisica_dummies], axis=1)
-
-    # Convertir columna de objetivo calórico en variables dummy
-    objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
-    x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
-    # deportes_df = pd.read_csv(r'C:\Users\de969\OneDrive\Escritorio\DESAFIO-DE-TRIPULACIONES\Raw_Datasets\dataframe_ytest.csv', sep=',')
-    # x = pd.concat([x, deportes_df], axis=1)
-    # Convertir columna de deportes practicados en variables dummy
-    deporte_practicado_dummies = x['DeportePracticado'].apply(lambda x: '|'.join(x)).str.get_dummies()
-    x = pd.concat([x, deporte_practicado_dummies], axis=1)
-    print(x)
+    # Convertir las preferencias en una lista de deportes
+    preferencias = ast.literal_eval(preferencias)
     
-    # Eliminar columnas originales que ya no son necesarias
-    x.drop(['Clima', 'CondicionFisica', 'ObjetivoCalorico','Genero','DeportePracticado'], axis=1, inplace=True)
     expected_columns = ['Temperatura (°C)', 'Humedad', 'Edad', 'Peso (Kg)', 'Distancia (Km)',
         'Clima_Lluvioso', 'Clima_Nublado', 'Clima_Soleado',
        'Genero_Hombre', 'Genero_Mujer', 'Condicion_0', 'Condicion_1',
@@ -157,40 +112,61 @@ def v2_query_process(edad, sexo, peso, condicion, objetivo, preferencias,
        'Salto a la comba', 'Senderismo', 'Skateboard', 'Sóftbol', 'Tai chi',
        'Tenis', 'Tenis de mesa', 'Tenis en pareja', 'Ultimate frisbee',
        'Voleibol', 'Voleibol acuático', 'Waterpolo', 'Yoga']
-    x = x.reindex(columns=expected_columns, fill_value=0)
+
+    x = pd.DataFrame(columns=expected_columns)
+    x.loc[0] = [0] * len(expected_columns)
     
-     # Convertir y_pred a una lista o cualquier otro objeto hashable
-    # y_pred_list = y_pred.tolist()
+    x['Temperatura (°C)'] = temperatura
+    x['Humedad'] = humedad
+    x['Edad'] = edad
+    x['Peso (Kg)'] = peso
+    x['Distancia (Km)'] = distancia
     
-    # print(x.shape)
-    # print(x)
-    # y_pred = modelo.predict(x)
-    # return {y_pred}
-    
+    if clima == 0:
+        x['Clima_Soleado'] = 1
+    elif clima == 1:
+        x['Clima_Nublado'] = 1
+    elif clima == 2:
+        x['Clima_Lluvioso'] = 1
+    else:
+        print('El valor de "clima" no es válido')
+
+    if sexo == 0:
+        x['Genero_Hombre'] = 1
+    elif sexo == 1:
+        x['Genero_Mujer'] = 1
+    else:
+        print('El valor de "sexo" no es válido')
+
+    if condicion == 0:
+        x['Condicion_0'] = 1
+    elif condicion == 1:
+        x['Condicion_1'] = 1
+    elif condicion == 2:
+        x['Condicion_2'] = 1
+
+    if objetivo == 0:
+        x['Objetivo_0'] = 1
+    elif objetivo == 1:
+        x['Objetivo_1'] = 1
+    elif objetivo == 2:
+        x['Objetivo_2'] = 1
+
+    for deporte in preferencias:
+        if deporte in x.columns:
+            x[deporte] = 1
+
+    for indice, fila in x.iterrows():
+        for columna in x.columns:
+            if fila[columna] == 1:
+                actividad = columna
+                calorias_deporte = gasto.loc[gasto['Actividad'] == actividad, 'Cal/Kg/h']
+                if not calorias_deporte.empty:
+                    x.at[indice, columna] *= calorias_deporte.iloc[0] * fila['Peso (Kg)']
+
     y_pred = modelo.predict(x)
     
     # Convertir y_pred a una lista o cualquier otro objeto hashable
     y_pred_list = y_pred.tolist()
 
     return {"Deporte recomendado": y_pred_list}
-
-#     # Convertir columna de objetivo calórico en variables dummy
-#     objetivos_caloricos_dummies = pd.get_dummies(x['ObjetivoCalorico'], prefix='Objetivo')
-#     x = pd.concat([x, objetivos_caloricos_dummies], axis=1)
-
-
-#     # Convertir columna de deportes practicados en variables dummy
-#     deporte_practicado_dummies = x['DeportePracticado'].apply(lambda x: '|'.join(x)).str.get_dummies()
-#     x = pd.concat([x, deporte_practicado_dummies], axis=1)
-
-#     # Eliminar columnas originales que ya no son necesarias
-#     x.drop(['Clima', 'CondicionFisica', 'ObjetivoCalorico','Genero','DeportePracticado'], axis=1, inplace=True)
-#     print(x.shape)
-#     print(x)
-#     y_pred = modelo.predict(x)
-        
-        
-        
-
-#     return {y_pred}
-
