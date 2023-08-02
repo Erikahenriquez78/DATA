@@ -1,7 +1,7 @@
 # Desafío de Tripulaciones · Grupo 5 · Data Science
 
 <p align="center">
-  <img src="https://pic.clubic.com/v1/images/2084307/raw?fit=smartCrop&height=795&width=1060&hash=bab85c27ab3b39e53887dfe665f24e297225a173" alt="imagen" style="margin-top: 40px; margin-bottom: 50px;">
+  <img src="https://pic.clubic.com/v1/images/2084307/raw?fit=smartCrop&height=795&width=1060&hash=bab85c27ab3b39e53887dfe665f24e297225a173" alt="imagen" style="margin-top: 40px; margin-bottom: 70px;">
 </p>
 
 
