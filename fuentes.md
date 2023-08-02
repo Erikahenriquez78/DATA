@@ -1,0 +1,5 @@
+- [Portal de Datos Abiertos de Madrid](https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=325e827b864f4410VgnVCM2000000c205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default)
+- [Centros de Salud de Madrid en ArcGIS Hub](https://hub.arcgis.com/datasets/ComunidadSIG::centros-de-salud-de-madrid/explore?location=40.506336%2C-3.865199%2C10.06)
+- [Datos de el gobierno](https://datos.gob.es/es)
+- [kaggle](https://www.kaggle.com/datasets/aadhavvignesh/calories-burned-during-exercise-and-activities)
+- [actividades deportivas dirigidas](https://sede.madrid.es/portal/site/tramites/menuitem.62876cb64654a55e2dbd7003a8a409a0/?vgnextoid=e3b0234be7924710VgnVCM2000001f4a900aRCRD&vgnextchannel=b59637c190180210VgnVCM100000c90da8c0RCRD&vgnextfmt=pd)
