@@ -38,9 +38,9 @@ desde la aplicación.
 
 Recursos:
 
-     [herramientas](./herramientas.txt)
+     herramientas.txt
 
-     [Fuentes](./fuentes.md)
+     fuentes.md
 
 Equipo
 

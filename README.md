@@ -26,9 +26,9 @@ Este proyecto tiene como objetivo principal optimizar las actividades deportivas
 
 1. **Recursos:**
 
-     [herramientas](./herramientas.txt)
+     [herramientas](./docs/herramientas.txt)
 
-     [Fuentes](./fuentes.md)
+     [Fuentes](./docs/fuentes.md)
 
 ## Equipo
 
