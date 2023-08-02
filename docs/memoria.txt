@@ -25,13 +25,18 @@ comprender mejor las preferencias y patrones de los usuarios.
 las preferencias y comportamientos identificados en los datos.
 
 8. Recomendador: se a creado una matriz de similitud basada en las características de diferentes 
-deportes para crear un recomendador basado en preferencias deportivas, cuyos resultados se relacionan con los datos obtenidos del modelo predictivo para así recomendar ubicaciones en el área de Madrid que cumplan con los requisitos de preferencias, predicción y cercanía del usuario a los mismos
+deportes para crear un recomendador basado en preferencias deportivas, cuyos resultados se relacionan 
+con los datos obtenidos del modelo predictivo para así recomendar ubicaciones en el área de 
+Madrid que cumplan con los requisitos de preferencias, predicción y cercanía del usuario a los mismos
 
 9. Web Scraping de Actividades: Se automatizó el proceso de recolección de datos diarios sobre
 actividades ofrecidas por la comunidad en centros climatizados.
 
 10. Automatización de Actualización de Tabla de Actividades: Se desarrolló un sistema automatizado
-para actualizar la tabla de actividades en la base de datos con los datos recopilados mediante web scraping, el objetivo consiste en poder recomendar actividades diarias ofrecidas por la comunidad en centros climatizados, independientemente de las diferentes características y preferencias de los usuarios.
+para actualizar la tabla de actividades en la base de datos con los datos recopilados mediante web 
+scraping, el objetivo consiste en poder recomendar actividades diarias ofrecidas por la comunidad en 
+centros climatizados, independientemente de las diferentes características y preferencias de los 
+usuarios.
 
 11. Generación de API: Se creó una API que permite el consumo de los datos y las recomendaciones 
 desde la aplicación.

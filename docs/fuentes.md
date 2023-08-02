@@ -3,3 +3,8 @@
 - [Datos de el gobierno](https://datos.gob.es/es)
 - [kaggle](https://www.kaggle.com/datasets/aadhavvignesh/calories-burned-during-exercise-and-activities)
 - [actividades deportivas dirigidas](https://sede.madrid.es/portal/site/tramites/menuitem.62876cb64654a55e2dbd7003a8a409a0/?vgnextoid=e3b0234be7924710VgnVCM2000001f4a900aRCRD&vgnextchannel=b59637c190180210VgnVCM100000c90da8c0RCRD&vgnextfmt=pd)
+- [Infraestructura cilista:](https://www.canva.com/design/DAFp6CKWrUg/k4GlDRo55D-apNmbudG5SQ/edit)
+- [Instalaciones Deportivas Básicas Municipales:](https://datos.gob.es/es/catalogo/l01280796-deportes-instalaciones-deportivas-basicas-municipales)
+- [Principales parques y jardines municipales](https://datos.gob.es/es/catalogo/l01280796-principales-parques-y-jardines-municipales1)
+- [Fuentes de agua:](https://datos.gob.es/es/catalogo/l01280796-fuentes-de-agua-para-beber1)
+- [Piscinas:](https://datos.gob.es/es/catalogo/l01280796-deportes-piscinas-municipales-en-la-ciudad-de-madrid)
