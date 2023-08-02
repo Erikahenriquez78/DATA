@@ -1,5 +1,7 @@
 # Desafío de Tripulaciones · Grupo 5 · Data Science
 
+![foto](https://pic.clubic.com/v1/images/2084307/raw?fit=smartCrop&height=795&width=1060&hash=bab85c27ab3b39e53887dfe665f24e297225a173)
+
 ## Objetivo de Data en la Aplicación
 
 Este proyecto tiene como objetivo principal optimizar las actividades deportivas durante climas adversos, como olas de calor, mediante la implementación de un sistema de recomendación basado en datos. A continuación, se destacan los puntos clave del proceso de data en la aplicación:
